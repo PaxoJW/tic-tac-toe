@@ -35,7 +35,7 @@
         };
 
         let humanScore = 0;
-        let ComputerScore = 0;
+        let computerScore = 0;
 
         function playRound(humanChoice, computerChoice) {
             let roundWinner = '';
@@ -52,28 +52,30 @@
                 humanScore += 1;
             } else {
                 roundWinner = 'computer';
-                ComputerScore += 1;
+                computerScore += 1;
             }
-            console.log(roundWinner, humanScore, ComputerScore);
+            console.log(roundWinner, humanScore, computerScore);
         };
         
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-        // function playGame () {
-        //     let humanScore = 0;
-        //     let ComputerScore = 0;
-            
-        //     while ((humanScore < 5) || (ComputerScore < 5)) {
-        //         console.log(humanScore);
-        //         let humanSelection = getHumanChoice();
-        //         let computerSelection = getComputerChoice(); 
-        //         console.log(humanSelection, computerSelection);               
-        //         playRound(humanSelection, computerSelection);
-        //     }; 
-        // };
+        // let humanSelection = getHumanChoice();
+        // let computerSelection = getComputerChoice();
+        // playRound(humanSelection, computerSelection);
+        function playGame () {           
+            let i = 0;
+            while (i < 5) {
+                const humanSelection = getHumanChoice();
+                const computerSelection = getComputerChoice();             
+                playRound(humanSelection, computerSelection);
+                i++;
+                if (humanScore === 3) {
+                    console.log("You win!");
+                } else if (computerScore === 3) {
+                    console.log("The computer beat you!")
+                }
+            }; 
+        };
 
-        // playGame();
+        playGame();
 
         // btn.addEventListener("click", getComputerChoice);
     </script>
