@@ -68,11 +68,18 @@
                 playRound(humanSelection, computerSelection);
                 i++;
                 if (humanScore === 3) {
-                    console.log("You win!");
+                    break;
                 } else if (computerScore === 3) {
-                    console.log("The computer beat you!")
+                    break;
                 }
-            }; 
+            };
+            if (humanScore > computerScore) {
+                console.log("You won!");
+            } else if (humanScore < computerScore) {
+                console.log("The computer beat you!");
+            } else {
+                console.log("It's a tie");
+            }
         };
 
         playGame();
