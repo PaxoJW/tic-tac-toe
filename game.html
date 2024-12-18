@@ -8,83 +8,11 @@
 </head>
 <body>
     <div>
-        <!-- <button>JS</button> -->
+        <button class="r-btn">ROCK</button>
+        <button class="p-btn">PAPER</button>
+        <button class="s-btn">SCISSORS</button>
     </div>
-
-    <script>
-        // const btn = document.querySelector('button');
-        
-
-        function getHumanChoice () {
-            choice = prompt("What is your choice?");
-            return choice;
-        };
-
-        function getComputerChoice () {
-            let num = Math.floor(Math.random()*3);
-            let choice = '';
-            if (num === 0) {
-                choice = 'rock';
-            } else if (choice === 1) {
-                choice = 'paper';
-            } else {
-                choice = 'scissors';
-            }
-
-            return choice;
-        };
-
-        let humanScore = 0;
-        let computerScore = 0;
-
-        function playRound(humanChoice, computerChoice) {
-            let roundWinner = '';
-            if (humanChoice === computerChoice) {
-                roundWinner = 'tie';
-            } else if ((humanChoice === 'scissors') && (computerChoice === 'paper')) {
-                roundWinner = 'human';
-                humanScore += 1;
-            } else if ((humanChoice == 'rock') && (computerChoice === 'scissors')) {
-                roundWinner = 'human';
-                humanScore += 1;
-            } else if ((humanChoice === 'paper') && (computerChoice === 'rock')) {
-                roundWinner = 'human';
-                humanScore += 1;
-            } else {
-                roundWinner = 'computer';
-                computerScore += 1;
-            }
-            console.log(roundWinner, humanScore, computerScore);
-        };
-        
-        // let humanSelection = getHumanChoice();
-        // let computerSelection = getComputerChoice();
-        // playRound(humanSelection, computerSelection);
-        function playGame () {           
-            let i = 0;
-            while (i < 5) {
-                const humanSelection = getHumanChoice();
-                const computerSelection = getComputerChoice();             
-                playRound(humanSelection, computerSelection);
-                i++;
-                if (humanScore === 3) {
-                    break;
-                } else if (computerScore === 3) {
-                    break;
-                }
-            };
-            if (humanScore > computerScore) {
-                console.log("You won!");
-            } else if (humanScore < computerScore) {
-                console.log("The computer beat you!");
-            } else {
-                console.log("It's a tie");
-            }
-        };
-
-        playGame();
-
-        // btn.addEventListener("click", getComputerChoice);
-    </script>
+    
+    <script src="game.js"></script>
 </body>
 </html>
